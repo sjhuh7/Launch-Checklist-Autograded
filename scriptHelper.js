@@ -54,8 +54,9 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         alert("You must fill in all the boxes")
         return;
     }
-    
-    if (validateInput(fuelLevel) === "Not a number" || validateInput(cargoLevel) === "Not a number" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
+    console.log(fuelLevel)
+    console.log(validateInput(fuelLevel))
+    if (validateInput(pilot) !== "Not a Number" || validateInput(copilot) !== "Not a Number" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
         alert("Pilot and copilot must be names while fuel level and cargo level must be a numerical value")
         return;
     }
