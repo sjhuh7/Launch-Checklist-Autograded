@@ -42,6 +42,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     fuelLevel = Number(fuelLevel)
     cargoLevel = Number(cargoLevel)
 
+    let pilotValidation = validateInput(pilot)
+    let copilotValidation = validateInput(copilot)
+    let fuelLevelValidation = validateInput(fuelLevel)
+    let cargoLevelValidation = validateInput(cargoLevel)
+
 
 //if statements used to give return statement if fuelLevel and cargoLevel are too high or if they are able to launch.
 
@@ -50,8 +55,9 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         return;
     }
     
-    if (validateInput(pilot) === "This is not a number" || validateInput(copilot) === "This is not a number" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
+    if (validateInput(fuelLevel) === "Not a number" || validateInput(cargoLevel) === "Not a number" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
         alert("Pilot and copilot must be names while fuel level and cargo level must be a numerical value")
+        return;
     }
     let launchStatus2 = true;
 
@@ -89,6 +95,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         } catch (error) {
             console.error("Error fetching planet data:", error);
         }
+        
         return planetsReturned;
     }
 
